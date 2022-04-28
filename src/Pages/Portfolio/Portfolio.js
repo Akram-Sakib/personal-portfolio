@@ -1,15 +1,15 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import Navbar from '../Shared/Navbar/Navbar';
 
-const Home = () => {
+const Portfolio = () => {
     return (
       <>
         <Helmet>
-          <title>Akram Sakib - Home</title>
+          <title>Akram Sakib - Portfolio</title>
         </Helmet>
+        <div>This is Portfolio page</div>
       </>
     );
 };
 
-export default Home;
+export default Portfolio;

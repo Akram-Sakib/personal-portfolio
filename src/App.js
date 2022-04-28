@@ -1,22 +1,33 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from './Pages/Home/Home';
-import Contact from './Pages/Contact/Contact';
 import { ThemeProvider } from './Context/ThemeContext/ThemeContext';
-import Background from './Pages/Shared/Theme/Background/Background';
+import Background from "./Pages/Shared/Theme/Background/Background";
+import { HelmetProvider } from "react-helmet-async";
+import Navbar from './Pages/Shared/Navbar/Navbar';
+import Blog from './Pages/Blog/Blog';
+import About from './Pages/About/About';
+import Contact from './Pages/Contact/Contact';
+import Portfolio from "./Pages/Portfolio/Portfolio";
 
 function App() {
   return (
     <>
       <ThemeProvider>
-        <Router>
-            <Routes>
-              <Route path="/">
-                <Route index element={<Home />} />
-                <Route path="contact" element={<Contact />} />
-              </Route>
-            </Routes>
-        </Router>
+        <HelmetProvider>
+          <Navbar/>
+            <Background>
+              <Routes>
+                <Route path="/">
+                  <Route index element={<Home />} />
+                  <Route path='/portfolio' element={<Portfolio />} />
+                  <Route path='/blog' element={<Blog />} />
+                  <Route path='/about' element={<About />} />
+                  <Route path='/contact' element={<Contact />} />
+                </Route>
+              </Routes>
+            </Background>
+        </HelmetProvider>
       </ThemeProvider>
     </>
   );
