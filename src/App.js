@@ -9,6 +9,7 @@ import Blog from './Pages/Blog/Blog';
 import About from './Pages/About/About';
 import Contact from './Pages/Contact/Contact';
 import Portfolio from "./Pages/Portfolio/Portfolio";
+import Footer from './Pages/Shared/Footer/Footer';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
                 </Route>
               </Routes>
             </Background>
+            <Footer/>
         </HelmetProvider>
       </ThemeProvider>
     </>
