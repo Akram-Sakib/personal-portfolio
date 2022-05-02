@@ -76,9 +76,11 @@ const Navbar = () => {
                   </span>
                 </NavLink>
                 <div className="relative">
+                  <NavLink activeclassname="active" to="/blog">
                     <span className="group dark:hover:text-white rounded-md text-gray-500 inline-flex items-center text-base font-medium hover:text-gray-900">
                       Blog
                     </span>
+                  </NavLink>
                 </div>
                 <NavLink activeclassname="active" to="/about">
                   <span className="text-base dark:hover:text-white font-medium text-gray-500 hover:text-gray-900">

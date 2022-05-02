@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "./../../../Assets/Images/logo.svg";
 
 const Footer = () => {
@@ -15,24 +15,24 @@ const Footer = () => {
         </Link>
         <ul className="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
           <li>
-            <a href="#" className="mr-4 hover:underline md:mr-6 ">
+            <NavLink to="/about" className="mr-4 hover:underline md:mr-6 ">
               About
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a href="#" className="mr-4 hover:underline md:mr-6">
+            <NavLink to="/privacy-policy" className="mr-4 hover:underline md:mr-6">
               Privacy Policy
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a href="#" className="mr-4 hover:underline md:mr-6 ">
+            <NavLink to="/licensing" className="mr-4 hover:underline md:mr-6 ">
               Licensing
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a href="#" className="hover:underline">
+            <NavLink to="/contact" className="hover:underline">
               Contact
-            </a>
+            </NavLink>
           </li>
         </ul>
       </div>

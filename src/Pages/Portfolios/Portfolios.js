@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
-const Portfolio = () => {
+const Portfolios = () => {
     return (
       <>
         <Helmet>
@@ -12,4 +12,4 @@ const Portfolio = () => {
     );
 };
 
-export default Portfolio;
+export default Portfolios;

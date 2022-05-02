@@ -8,7 +8,7 @@ import Navbar from './Pages/Shared/Navbar/Navbar';
 import Blog from './Pages/Blog/Blog';
 import About from './Pages/About/About';
 import Contact from './Pages/Contact/Contact';
-import Portfolio from "./Pages/Portfolio/Portfolio";
+import Portfolios from "./Pages/Portfolios/Portfolios";
 import Footer from './Pages/Shared/Footer/Footer';
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
               <Routes>
                 <Route path="/">
                   <Route index element={<Home />} />
-                  <Route path='/portfolio' element={<Portfolio />} />
+                  <Route path='/portfolio' element={<Portfolios />} />
                   <Route path='/blog' element={<Blog />} />
                   <Route path='/about' element={<About />} />
                   <Route path='/contact' element={<Contact />} />

@@ -7,7 +7,7 @@ const Blog = () => {
         <Helmet>
           <title>Akram Sakib - Portfolio</title>
         </Helmet>
-        <div>This is BLog page</div>
+        <div>Coming soon</div>
       </>
     );
 };
