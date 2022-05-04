@@ -16,7 +16,7 @@
     transition: transform 0.5s;
 }
 
-.social-links a .fab {
+.social-links a .fa {
     font-size: 20px;
     line-height: 50px;
     position: relative;
@@ -40,7 +40,7 @@
   top: 0;
 }
 
-.social-links a:hover .fab {
+.social-links a:hover .fa {
   color: #fff;
 }
 
