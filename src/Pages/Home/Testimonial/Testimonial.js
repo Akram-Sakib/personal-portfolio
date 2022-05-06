@@ -32,7 +32,6 @@ const Testimonial = () => {
     slidesToScroll: 1,
     slidesToShow:2,
     autoplay: true,
-    infinite: true,
     pauseOnHover: false,
 
     responsive: [
@@ -67,7 +66,7 @@ const Testimonial = () => {
         <span className="text-indigo-600 dark:text-indigo-500"> Review</span>
       </h2>
 
-      <div className="px-6 text-center">
+      <div className="px-6 ">
         <Slider {...settings_1}>
           {testimonial.map((review) => (
             <div key={review.id}>
