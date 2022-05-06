@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Filter from "./Filter/Filter";
 import Project from "./Project/Project";
+import {AnimatePresence, motion} from "framer-motion";
 
 
 const Projects = () => {
@@ -32,13 +33,26 @@ const Projects = () => {
         with love, expertise and pinch of magical ingredients
       </p>
       <div className="text-center">
-        <Filter projects={projects} setFiltered={setFiltered} active={active} setActive={setActive}/>
+        <Filter
+          projects={projects}
+          setFiltered={setFiltered}
+          active={active}
+          setActive={setActive}
+        />
       </div>
-      <div className="grid grid-cols-4 gap-4">
-        {filtered.map((project, index) => (
-          <Project key={index} project={project} />
-        ))}
-      </div>
+      <motion.div
+        layout
+        animate={{ opacity: 1 }}
+        initial={{ opacity: 0 }}
+        exit={{ opacity: 0 }}
+        className="grid grid-cols-4 gap-4"
+      >
+        <AnimatePresence>
+          {filtered.map((project, index) => (
+            <Project key={index} project={project} />
+          ))}
+        </AnimatePresence>
+      </motion.div>
     </section>
   );
 };

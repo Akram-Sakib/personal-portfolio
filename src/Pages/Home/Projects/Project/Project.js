@@ -1,10 +1,12 @@
+import {  motion } from 'framer-motion';
 import React from 'react';
 
 const Project = ({ project }) => {
   return (
-    <div
+    <motion.div
+      layout
       key={project.id}
-      className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 mb-6 md:w-60 lg:w-auto lg:h-auto md:h-96"
+      className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 mb-6 md:w-60 lg:w-auto lg:h-auto md:h-96 transition-all"
     >
       <img src={`./../../../Assets/${project?.screenshots[0]}`} alt="" />
       <div className="p-5">
@@ -33,7 +35,7 @@ const Project = ({ project }) => {
           </svg>
         </a>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
