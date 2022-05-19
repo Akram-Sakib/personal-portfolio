@@ -13,15 +13,15 @@ const Projects = () => {
       useEffect(()=>{
          fetchProject();
       },[]);
-
+      
       const fetchProject = async()=>{
-        const res = await fetch("./projects.json");
+        const res = await fetch("http://localhost:5000/portfolio");
         const data = await res.json();
-        setProjects(data.data);
-        setFiltered(data.data);
+        setProjects(data.result);
+        setFiltered(data.result);
       }
 
-
+      
 
   return (
     <section className="container mx-auto">
