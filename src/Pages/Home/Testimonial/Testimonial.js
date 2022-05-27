@@ -70,9 +70,7 @@ const Testimonial = () => {
         <Slider {...settings_1}>
           {testimonial.map((review) => (
             <div key={review.id}>
-              <div
-                className="flex flex-col items-center md:mx-auto bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
-              >
+              <div className="flex flex-col items-center md:mx-auto bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
                 <img
                   className="object-cover w-full h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
                   src={review.avatar}
@@ -83,12 +81,13 @@ const Testimonial = () => {
                     {review.name}
                   </h5>
                   <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                    {review.message.slice(0,130)}{"."}
+                    {review.message.slice(0, 130)}
+                    {"."}
                   </p>
                   <div>
                     <Rating
-                      emptySymbol="fa fa-star-o fa-2x text-indigo-800"
-                      fullSymbol="fa fa-star fa-2x text-indigo-800"
+                      emptySymbol="fa fa-star-o fa-2x text-indigo-800 dark:text-indigo-500"
+                      fullSymbol="fa fa-star fa-2x text-indigo-800 dark:text-indigo-500"
                       fractions={10}
                       initialRating={review.rating}
                       readonly

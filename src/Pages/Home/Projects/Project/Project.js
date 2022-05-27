@@ -7,7 +7,7 @@ const Project = ({ project }) => {
     <motion.div
       layout
       key={project.id}
-      className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 mb-6 md:w-60 lg:w-auto lg:h-auto md:h-96 transition-all"
+      className="max-w-sm md:w-full bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 mb-6 md:w-60 lg:w-auto lg:h-auto md:h-96 transition-all"
     >
       <img src={`${project?.featureimg}`} alt="" />
       <div className="p-5">
