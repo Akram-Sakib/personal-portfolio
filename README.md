@@ -70,3 +70,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 ✳`  🎀  𝒯𝒽𝑒 𝓌𝑒𝒷𝓈𝒾𝓉𝑒 𝒾𝓈 𝒶 𝓅𝑒𝓇𝓈💙𝓃𝒶𝓁 𝓅🍪𝓇𝓉𝒻🌸𝓁𝒾🍑. 𝒞𝓇𝑒𝒶𝓉𝑒𝒹 𝒷𝓎 𝒜𝓀𝓇𝒶𝓂 𝒮𝒶𝓀𝒾𝒷. 𝒯𝒽𝑒 𝓉𝑒𝒸𝒽𝓃❁𝓁💮𝑔𝓎 𝓊𝓈𝑒𝒹 𝒾𝓃 𝓉𝒽𝑒 𝓌𝑒𝒷𝓈𝒾𝓉𝑒 𝒾𝓈 𝑅𝑒𝒶𝒸𝓉, 𝒯𝒶𝒾𝓁𝓌𝒾𝓃𝒹 𝒞𝒮𝒮, 𝒶𝓃𝒹 𝓁☯𝓉𝓈 💞𝒻 𝓅𝒶𝒸𝓀𝒶𝑔𝑒𝓈. 𝐻𝑒𝓇𝑒 𝓎❤𝓊 𝒸𝒶𝓃 𝒷𝓇❤𝓌𝓈𝑒 𝓉𝒽𝓇☯𝓊𝑔𝒽 𝓂𝓎 𝓅𝓇🍑𝒿𝑒𝒸𝓉𝓈, 𝓂𝓎 𝓇𝑒𝓈𝓊𝓂𝑒, 𝓈𝑒𝓇𝓋𝒾𝒸𝑒𝓈, 𝒶𝓃𝒹 𝒶𝒷🌸𝓊𝓉 𝓂𝑒, 🌞𝓇 𝓎💗𝓊 𝒸𝒶𝓃 𝒸💗𝓃𝓉𝒶𝒸𝓉 𝓂𝑒 𝒹𝒾𝓇𝑒𝒸𝓉𝓁𝓎.  🎀  `✳
+
+ ![Snake animation](https://github.com/joaotuliojt/joaotuliojt/blob/output/github-contribution-grid-snake.svg)

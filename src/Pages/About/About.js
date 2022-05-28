@@ -1,18 +1,23 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import "./About.css";
+import {Link} from "react-router-dom";
 
 const About = () => {
   return (
     <>
       <Helmet>
-        <title>Akram Sakib - About</title>
+        <title>Akram Sakib | About</title>
       </Helmet>
-      <section className="text-gray-700 body-font">
+      <section className="text-gray-700 body-font dark:text-white">
         <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
           <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-            <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
-              Web Application Developer
+            <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 dark:text-white">
+              Web Application{" "}
+              <span className="text-indigo-600 dark:text-indigo-500">
+                {" "}
+                Developer
+              </span>
             </h1>
             <p className="mb-8 leading-relaxed">
               Hey there! I'm a <del>dragon lost in human world</del> Computer
@@ -30,6 +35,11 @@ const About = () => {
               <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
                 Resume
               </button>
+              <Link to="/contact">
+                <button className="inline-flex ml-4 text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+                  Contact Me
+                </button>
+              </Link>
             </div>
           </div>
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
@@ -43,15 +53,19 @@ const About = () => {
       </section>
       <section className="edu_cation">
         <div className="educationWrapper">
-          <div className="workheading">Education</div>
+          <div className="workheading dark:text-white">Education</div>
 
           <div className="timeline">
             <ul>
               <li>
                 <div className="content">
-                  <h3>Junior Dakhil Certificate</h3>
-                  <p>Fulmati Islamia Alim Madrasah</p>
-                  <p>Completed JDC From Fulmati Madrasah</p>
+                  <h3 className="dark:text-white">Junior Dakhil Certificate</h3>
+                  <p className="dark:text-gray-400">
+                    Fulmati Islamia Alim Madrasah
+                  </p>
+                  <p className="dark:text-gray-400">
+                    Completed JDC From Fulmati Madrasah
+                  </p>
                 </div>
                 <div
                   className="time"
@@ -60,14 +74,20 @@ const About = () => {
                     color: "#263859",
                   }}
                 >
-                  <h4>Jan - Dec 2018</h4>
+                  <h4 className="dark:text-white">Jan - Dec 2018</h4>
                 </div>
               </li>
               <li>
                 <div className="content">
-                  <h3>Secondary School Certificate</h3>
-                  <p>Fulmati Islamia Alim Madrasah</p>
-                  <p>Completed SSC From Fulmati Madrasah</p>
+                  <h3 className="dark:text-white">
+                    Secondary School Certificate
+                  </h3>
+                  <p className="dark:text-gray-400">
+                    Fulmati Islamia Alim Madrasah
+                  </p>
+                  <p className="dark:text-gray-400">
+                    Completed SSC From Fulmati Madrasah
+                  </p>
                 </div>
                 <div
                   className="time"
@@ -76,14 +96,18 @@ const About = () => {
                     color: "#263859",
                   }}
                 >
-                  <h4>Jan - Fab 2019 - 2020</h4>
+                  <h4 className="dark:text-white">Jan - Fab 2019 - 2020</h4>
                 </div>
               </li>
               <li>
                 <div className="content">
-                  <h3>Computer Technology</h3>
-                  <p>Dhaka Polytechnic Institute</p>
-                  <p>Currently I am studying in Dhaka Polytechnic Institute</p>
+                  <h3 className="dark:text-white">Computer Technology</h3>
+                  <p className="dark:text-gray-400">
+                    Dhaka Polytechnic Institute
+                  </p>
+                  <p className="dark:text-gray-400">
+                    Currently I am studying in Dhaka Polytechnic Institute
+                  </p>
                 </div>
                 <div
                   className="time"
@@ -92,7 +116,7 @@ const About = () => {
                     color: "#263859",
                   }}
                 >
-                  <h4>Sep - May 2022</h4>
+                  <h4 className="dark:text-white">Sep - May 2022</h4>
                 </div>
               </li>
               <div style={{ clear: "both" }}></div>
