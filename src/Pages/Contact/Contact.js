@@ -21,23 +21,23 @@ const Contact = () => {
       </Helmet>
       <section className="contact_section py-12">
         <div class="text-center mb-4">
-          <p class="text-sm leading-7 text-gray-500 font-regular uppercase">
+          <p class="text-sm leading-7 dark:text-white text-gray-500 font-regular uppercase">
             Contact
           </p>
-          <h3 class="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight text-gray-900">
+          <h3 class="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight text-gray-900 dark:text-white">
             Get In <span class="text-indigo-600">Touch</span>
           </h3>
         </div>
         <div className="container mx-auto flex px-5 pb-24 md:flex-row flex-col items-center">
-    <div className="lottie">
-      <Lottie options={defaultOptions} height={"100%"} width={"100%"} />
-    </div>
+          <div className="lottie">
+            <Lottie options={defaultOptions} height={"100%"} width={"100%"} />
+          </div>
           <div class="max-w-screen-md mx-auto p-5">
             <form class="w-full">
               <div class="flex flex-wrap -mx-3 mb-6">
                 <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                   <label
-                    class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                    class="block uppercase tracking-wide text-gray-700 dark:text-white text-xs font-bold mb-2"
                     for="grid-first-name"
                   >
                     First Name
@@ -54,7 +54,7 @@ const Contact = () => {
                 </div>
                 <div class="w-full md:w-1/2 px-3">
                   <label
-                    class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                    class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
                     for="grid-last-name"
                   >
                     Last Name
@@ -70,7 +70,7 @@ const Contact = () => {
               <div class="flex flex-wrap -mx-3 mb-6">
                 <div class="w-full px-3">
                   <label
-                    class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                    class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
                     for="grid-password"
                   >
                     Email Address
@@ -87,7 +87,7 @@ const Contact = () => {
               <div class="flex flex-wrap -mx-3 mb-6">
                 <div class="w-full px-3">
                   <label
-                    class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                    class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
                     for="grid-password"
                   >
                     Your Message
@@ -101,7 +101,9 @@ const Contact = () => {
                   <div class="md:flex md:items-center">
                     <label class="block text-gray-500 font-bold">
                       <input class="mr-2 leading-tight" type="checkbox" />
-                      <span class="text-sm">Send me your newsletter!</span>
+                      <span class="text-sm dark:text-white">
+                        Send me your newsletter!
+                      </span>
                     </label>
                   </div>
                   <button
