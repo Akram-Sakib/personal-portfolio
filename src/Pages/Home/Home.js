@@ -15,6 +15,7 @@ const Home = () => {
         <Services/>
         <Testimonial/>
         <Projects/>
+        {/*New Contributor Created Successfully */}
       </>
     );
 };
