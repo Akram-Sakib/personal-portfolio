@@ -2,6 +2,8 @@ import React from "react";
 import "./Banner.css";
 import Lottie from "react-lottie";
 import developer from "./../../../Assets/SvgAnimations/developer.json";
+import {motion} from "framer-motion";
+import { bannerLeftVariant, bannerRightVariant } from "../../../Animations/Animations";
 
 const Banner = () => {
 
@@ -14,10 +16,15 @@ const Banner = () => {
     },
   };
 
+
   return (
     <section className="container mx-auto">
       <div className="flex flex-col lg:flex-row pt-8 md:pt-16 lg:pt-20 px-6 lg:justify-between">
-        <div>
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={bannerLeftVariant}
+        >
           <h2 className="text-4xl text-left tracking-tight font-extrabold  text-dark dark:text-white sm:leading-none">
             Web Application
             <span className="text-indigo-600 dark:text-indigo-500">
@@ -74,10 +81,15 @@ const Banner = () => {
               Resume
             </button>
           </div>
-        </div>
-        <div className="lg:w-1/3 md:w-3/4 md:mx-auto">
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={bannerRightVariant}
+          className="lg:w-1/3 md:w-3/4 md:mx-auto"
+        >
           <Lottie options={defaultOptions} height={"70%"} width={"100%"} />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

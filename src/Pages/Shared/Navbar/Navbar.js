@@ -11,6 +11,8 @@ import { ImBlog } from "react-icons/im";
 import logo from "./../../../Assets/Images/logo.svg";
 import { Link, NavLink } from 'react-router-dom';
 import "./Navbar.css";
+import { motion } from 'framer-motion';
+import { navAnimationLogo, navAnimationMenu1, navAnimationMenu2, navAnimationMenu3, navAnimationMenu4, navAnimationMenu5 } from '../../../Animations/Animations';
 
 const Navbar = () => {
   
@@ -22,7 +24,12 @@ const Navbar = () => {
         <div className="relative z-50 bg-white dark:bg-slate-900 transition-all">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <div className="flex justify-between items-center transition-all dark:border-slate-700 border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
-              <div className="flex justify-start lg:w-0 lg:flex-1">
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={navAnimationLogo}
+                className="flex justify-start lg:w-0 lg:flex-1"
+              >
                 <Link to="/">
                   <img
                     className="h-8 lg:w-40 md:w-32 sm:w-28"
@@ -30,7 +37,7 @@ const Navbar = () => {
                     alt=""
                   />
                 </Link>
-              </div>
+              </motion.div>
               <div className="-mr-2 -my-2 md:hidden">
                 <button
                   type="button"
@@ -71,24 +78,32 @@ const Navbar = () => {
                   </NavLink>
                 </div>
                 <NavLink activeclassname="active" to="/portfolio">
-                  <span className="text-base dark:hover:text-white font-medium text-gray-500 hover:text-gray-900">
+                  <span
+                    className="text-base dark:hover:text-white font-medium text-gray-500 hover:text-gray-900"
+                  >
                     Portfolio
                   </span>
                 </NavLink>
                 <div className="relative">
                   <NavLink activeclassname="active" to="/blog">
-                    <span className="group dark:hover:text-white rounded-md text-gray-500 inline-flex items-center text-base font-medium hover:text-gray-900">
+                    <span
+                      className="group dark:hover:text-white rounded-md text-gray-500 inline-flex items-center text-base font-medium hover:text-gray-900"
+                    >
                       Blog
                     </span>
                   </NavLink>
                 </div>
                 <NavLink activeclassname="active" to="/about">
-                  <span className="text-base dark:hover:text-white font-medium text-gray-500 hover:text-gray-900">
+                  <span
+                    className="text-base dark:hover:text-white font-medium text-gray-500 hover:text-gray-900"
+                  >
                     About
                   </span>
                 </NavLink>
                 <NavLink activeclassname="active" to="/contact">
-                  <span className="text-base dark:hover:text-white font-medium text-gray-500 hover:text-gray-900">
+                  <span
+                    className="text-base dark:hover:text-white font-medium text-gray-500 hover:text-gray-900"
+                  >
                     Contact
                   </span>
                 </NavLink>

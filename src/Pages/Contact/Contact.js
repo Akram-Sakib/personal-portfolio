@@ -1,9 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import Lottie from "react-lottie";
 import ContactMe from "./../../Assets/SvgAnimations/contact.json";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+
+  const [values, setValues] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    role: "",
+    message: "",
+  });
+  console.log(values);
+
+  const handleChange = (e) => {
+    setValues((values) => ({
+      ...values,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleSubmit = (e)=>{
+    e.preventDefault();
+    emailjs
+      .send(
+        "service_0qurx2z",
+        "template_68afoel",
+        values,
+        "user_o7O07d34s7XBqpunKdUtT"
+      )
+      .then(
+        (res) => {
+          console.log("Success",res);
+        },
+        (err) => {
+          console.log("Error",err);
+        }
+      );
+  }
 
   const defaultOptions = {
     loop: true,
@@ -33,7 +69,7 @@ const Contact = () => {
             <Lottie options={defaultOptions} height={"100%"} width={"100%"} />
           </div>
           <div class="max-w-screen-md mx-auto p-5">
-            <form class="w-full">
+            <form class="w-full" onSubmit={handleSubmit}>
               <div class="flex flex-wrap -mx-3 mb-6">
                 <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                   <label
@@ -46,7 +82,9 @@ const Contact = () => {
                     class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                     id="grid-first-name"
                     type="text"
+                    name="firstName"
                     placeholder="Jane"
+                    onBlur={handleChange}
                   />
                   <p class="text-red-500 text-xs italic">
                     Please fill out this field.
@@ -63,7 +101,9 @@ const Contact = () => {
                     class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                     id="grid-last-name"
                     type="text"
+                    name="lastName"
                     placeholder="Doe"
+                    onBlur={handleChange}
                   />
                 </div>
               </div>
@@ -79,7 +119,9 @@ const Contact = () => {
                     class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                     id="grid-email"
                     type="email"
+                    name="email"
                     placeholder="********@*****.**"
+                    onBlur={handleChange}
                   />
                 </div>
               </div>
@@ -95,6 +137,8 @@ const Contact = () => {
                   <textarea
                     rows="10"
                     class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    name="message"
+                    onBlur={handleChange}
                   ></textarea>
                 </div>
                 <div class="flex justify-between w-full px-3">
@@ -109,6 +153,7 @@ const Contact = () => {
                   <button
                     class="shadow bg-indigo-600 hover:bg-indigo-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-6 rounded"
                     type="submit"
+                    onClick={handleSubmit}
                   >
                     Send Message
                   </button>
