@@ -2,7 +2,10 @@ import React from "react";
 import service1 from "./../../../Assets/SvgAnimations/service1.json";
 import service2 from "./../../../Assets/SvgAnimations/service2.json";
 import service3 from "./../../../Assets/SvgAnimations/service3.json";
+import { motion, useAnimation } from "framer-motion";
 import Lottie from "react-lottie";
+import { inView, useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 
 const servicesData = [
   {
@@ -18,6 +21,17 @@ const servicesData = [
     },
     description:
       "As a Front-End developer I have vast experience in making user-friendly web interfaces that help improve user experience and increase customer engagement.",
+    serviceAnimation: {
+      hidden: {
+        x: "-100vw",
+        opacity: 0,
+      },
+      visible: {
+        x: 0,
+        opacity: 1,
+        transition: { duration: 1.5, delay: 1, type: "spring" },
+      },
+    },
   },
   {
     id: 2,
@@ -32,6 +46,17 @@ const servicesData = [
     },
     description:
       "We provide backend development for various web and mobile apps.our back-end development team will provide you the best service to achieve your goals.",
+    serviceAnimation: {
+      hidden: {
+        x: "-100vw",
+        opacity: 0,
+      },
+      visible: {
+        x: 0,
+        opacity: 1,
+        transition: { duration: 1.5, delay: 2, type: "spring" },
+      },
+    },
   },
   {
     id: 3,
@@ -46,10 +71,42 @@ const servicesData = [
     },
     description:
       "Be it Web application services or API development in any domain, our team of dedicated developers has expertise in delivering power-packed solutions.",
+    serviceAnimation: {
+      hidden: {
+        x: "-100vw",
+        opacity: 0,
+      },
+      visible: {
+        x: 0,
+        opacity: 1,
+        transition: { duration: 1.5, delay: 3, type: "spring" },
+      },
+    },
   },
 ];
 
 const Services = () => {
+
+ const { ref, inView } = useInView({
+   threshold: 0.2,
+   triggerOnce: true,
+ });
+ const animation = useAnimation();
+
+ useEffect(() => {
+   if (inView) {
+     animation.start({
+       x: 0,
+       transition: {
+         type: "spring",
+         duration: 1,
+       },
+     });
+   }
+   if (!inView) {
+     animation.start({ x: "-100vw" });
+   }
+ }, [inView, animation]);
 
   return (
     <section className="container mx-auto pb-20">
@@ -59,8 +116,12 @@ const Services = () => {
       </h2>
       <div className="flex flex-col md:flex-row lg:flex-row justify-between items-center md:items-stretch	 lg:items-stretch	">
         {servicesData.map((service) => (
-          <div
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={service.serviceAnimation}
             key={service.id}
+            ref={ref}
             className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 mb-6 md:w-60 lg:w-auto lg:h-auto md:h-96"
           >
             <Lottie
@@ -94,7 +155,7 @@ const Services = () => {
                 </svg>
               </a>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
