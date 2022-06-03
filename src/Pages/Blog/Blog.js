@@ -1,12 +1,49 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "./Blog.css";
 
 const Blog = () => {
+  const settings = {
+    dots: true,
+    arrows: false,
+    infinite: true,
+    speed: 500,
+    slidesToScroll: 1,
+    slidesToShow: 3,
+    autoplay: true,
+    pauseOnHover: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
   return (
     <>
       <Helmet>
-        <title>Akram Sakib - Portfolio</title>
+        <title>Akram Sakib - Blogs</title>
       </Helmet>
       <div className="flex items-center dark:bg-gray-900 justify-center h-screen bg-gray-200">
         <div className="container">
@@ -45,6 +82,94 @@ const Blog = () => {
           </div>
         </div>
       </div>
+
+      {/* Blog Start From Here */}
+      <section className="container mx-auto pb-20">
+        <h2 className="my-12 text-5xl text-center tracking-tight font-extrabold  text-dark dark:text-white sm:leading-none">
+          Recent
+          <span className="text-indigo-600 dark:text-indigo-500"> Blogs</span>
+        </h2>
+        <div className="">
+          <Slider {...settings}>
+            <div>
+              <div className="mx-4 rounded-lg shadow single-blog cursor-pointer relative">
+                <Link
+                  to="/"
+                  className="blog-text bg-indigo-900 bg-opacity-80 rounded-lg"
+                >
+                  <div className="flex items-center justify-center w-full h-full">
+                    <h1 className="text-white text-2xl font-semibold text-center">
+                      How to become a Sr Developer
+                    </h1>
+                  </div>
+                </Link>
+                <img
+                  src="https://www.webnode.com/blog/wp-content/uploads/2019/04/blog2.png"
+                  alt="blog"
+                  className="blog-image w-full h-full hidden rounded-lg"
+                />
+              </div>
+            </div>
+            <div>
+              <div className="mx-4 rounded-lg shadow single-blog cursor-pointer relative">
+                <Link
+                  to="/"
+                  className="blog-text bg-indigo-900 bg-opacity-80 rounded-lg"
+                >
+                  <div className="flex items-center justify-center w-full h-full">
+                    <h1 className="text-white text-2xl font-semibold text-center">
+                      How to become a Sr Developer
+                    </h1>
+                  </div>
+                </Link>
+                <img
+                  src="https://www.webnode.com/blog/wp-content/uploads/2019/04/blog2.png"
+                  alt="blog"
+                  className="blog-image w-full h-full hidden rounded-lg"
+                />
+              </div>
+            </div>
+            <div>
+              <div className="mx-4 rounded-lg shadow single-blog cursor-pointer relative">
+                <Link
+                  to="/"
+                  className="blog-text bg-indigo-900 bg-opacity-80 rounded-lg"
+                >
+                  <div className="flex items-center justify-center w-full h-full">
+                    <h1 className="text-white text-2xl font-semibold text-center">
+                      How to become a Sr Developer
+                    </h1>
+                  </div>
+                </Link>
+                <img
+                  src="https://www.webnode.com/blog/wp-content/uploads/2019/04/blog2.png"
+                  alt="blog"
+                  className="blog-image w-full h-full hidden rounded-lg"
+                />
+              </div>
+            </div>
+            <div>
+              <div className="mx-4 rounded-lg shadow single-blog cursor-pointer relative">
+                <Link
+                  to="/"
+                  className="blog-text bg-indigo-900 bg-opacity-80 rounded-lg"
+                >
+                  <div className="flex items-center justify-center w-full h-full">
+                    <h1 className="text-white text-2xl font-semibold text-center">
+                      How to become a Sr Developer
+                    </h1>
+                  </div>
+                </Link>
+                <img
+                  src="https://www.webnode.com/blog/wp-content/uploads/2019/04/blog2.png"
+                  alt="blog"
+                  className="blog-image w-full h-full hidden rounded-lg"
+                />
+              </div>
+            </div>
+          </Slider>
+        </div>
+      </section>
     </>
   );
 };
