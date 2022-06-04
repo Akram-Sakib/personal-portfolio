@@ -17,8 +17,7 @@ const Banner = () => {
   };
 
   return (
-    <section className="container mx-auto">
-      
+    <section className="container mx-auto relative">
       <div className="flex flex-col lg:flex-row pt-8 md:pt-16 lg:pt-20 px-6 lg:justify-between">
         <motion.div
           initial="hidden"

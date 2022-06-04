@@ -10,12 +10,14 @@ import About from './Pages/About/About';
 import Contact from './Pages/Contact/Contact';
 import Portfolios from "./Pages/Portfolios/Portfolios";
 import Footer from './Pages/Shared/Footer/Footer';
+import Particle from './Particle/Particle';
 
 function App() {
   return (
     <>
       <ThemeProvider>
         <HelmetProvider>
+          <Particle/>
           <Navbar/>
             <Background>
               <Routes>

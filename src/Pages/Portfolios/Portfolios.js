@@ -5,7 +5,7 @@ const Portfolios = () => {
     return (
       <>
         <Helmet>
-          <title>Akram Sakib - Portfolio</title>
+          <title>Akram Sakib | Portfolio</title>
         </Helmet>
         <div>This is Portfolio page</div>
       </>
