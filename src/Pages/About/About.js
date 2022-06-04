@@ -1,9 +1,8 @@
 import { Helmet } from "react-helmet-async";
 import "./About.css";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const About = () => {
-
   return (
     <>
       <Helmet>
@@ -121,6 +120,66 @@ const About = () => {
               </li>
               <div style={{ clear: "both" }}></div>
             </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="text-gray-700 body-font dark:text-white">
+        <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+          <div className="skills_left">
+            <div className="my-8">
+              <span className="text-indigo-700 text-lg">Skills</span>
+              <h3 className="text-4xl uppercase font-extrabold">
+                Programming Skills
+              </h3>
+            </div>
+            <div className="my-8 w-4/6">
+              <p>
+                For more than 20 years our experts have been accomplishing
+                enough with modern Web Development, new generation web and app
+                programming language.
+              </p>
+            </div>
+            <div className="progress_bar">
+              <div className="my-4">
+                <div class="mb-1 text-base font-medium">React</div>
+                <div className="w-full h-4 bg-transparent rounded-full">
+                  <div
+                    className="h-4 bg-indigo-600 rounded-full"
+                    style={{ width: "70%" }}
+                  ></div>
+                </div>
+              </div>
+              <div className="my-8">
+                <div class="mb-1 text-base font-medium">Javascript</div>
+                <div className="w-full h-4 bg-transparent rounded-full">
+                  <div
+                    className="h-4 bg-indigo-600 rounded-full"
+                    style={{ width: "80%" }}
+                  ></div>
+                </div>
+              </div>
+              <div className="my-8">
+                <div class="mb-1 text-base font-medium">Backend</div>
+                <div className="w-full h-4 bg-transparent rounded-full">
+                  <div
+                    className="h-4 bg-indigo-600 rounded-full"
+                    style={{ width: "60%" }}
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="right-img w-4/6
+           relative"
+          >
+            <div className="w-4/6 h-96 bg-indigo-600">
+              <img
+                src="https://marketifythemes.net/html/kura/img/portfolio/2.jpg"
+                alt=""
+              />
+            </div>
           </div>
         </div>
       </section>

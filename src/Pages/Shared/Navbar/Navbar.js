@@ -12,7 +12,7 @@ import logo from "./../../../Assets/Images/logo.svg";
 import { Link, NavLink } from 'react-router-dom';
 import "./Navbar.css";
 import { motion } from 'framer-motion';
-import { navAnimationLogo, navAnimationMenu1, navAnimationMenu2, navAnimationMenu3, navAnimationMenu4, navAnimationMenu5 } from '../../../Animations/Animations';
+import { navAnimationLogo } from '../../../Animations/Animations';
 
 const Navbar = () => {
   
