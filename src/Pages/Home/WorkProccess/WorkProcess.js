@@ -33,7 +33,7 @@ const WorkProcess = () => {
             />
           </div>
           <div class="text">
-            <h5>Thinking</h5>
+            <h5 className="font-extrabold">Thinking</h5>
           </div>
         </div>
         <div class="how-i-work-item">
@@ -54,7 +54,7 @@ const WorkProcess = () => {
             />
           </div>
           <div class="text">
-            <h5>Research</h5>
+            <h5 className="font-extrabold">Research</h5>
           </div>
         </div>
         <div class="how-i-work-item">
@@ -70,7 +70,7 @@ const WorkProcess = () => {
             />
           </div>
           <div class="text">
-            <h5>Design</h5>
+            <h5 className="font-extrabold">Design</h5>
           </div>
         </div>
       </div>
