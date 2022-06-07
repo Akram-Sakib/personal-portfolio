@@ -4,6 +4,7 @@ import Banner from './Banner/Banner';
 import Testimonial from "./Testimonial/Testimonial";
 import Services from './Services/Services';
 import Projects from './Projects/Projects';
+import WorkProcess from './WorkProccess/WorkProcess';
 
 const Home = () => {
     return (
@@ -15,7 +16,7 @@ const Home = () => {
         <Services/>
         <Testimonial/>
         <Projects/>
-        {/*New Contributor Created Successfully */}
+        <WorkProcess/>
       </>
     );
 };

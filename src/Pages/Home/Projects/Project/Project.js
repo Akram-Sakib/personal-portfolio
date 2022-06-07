@@ -7,7 +7,7 @@ const Project = ({ project }) => {
     <motion.div
       layout
       key={project.id}
-      className="max-w-sm md:w-full bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 mb-6 md:w-60 lg:w-auto lg:h-auto md:h-96 transition-all"
+      className="max-w-sm md:w-full bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 mb-6 md:w-60 lg:w-auto lg:h-auto md:h-96"
     >
       <img src={`${project?.featureimg}`} alt="" />
       <div className="p-5">
@@ -15,7 +15,7 @@ const Project = ({ project }) => {
           {project?.name}
         </h5>
         <p className="mb-3 lg:text-base	 font-normal md:text-xs text-gray-700 dark:text-gray-400">
-          {project?.description}
+          {project?.description.slice(0, 150)}
         </p>
         <Link
           to="/contact"

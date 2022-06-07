@@ -21,7 +21,7 @@ const Projects = () => {
 
   return (
     <>
-      <section className="container mx-auto z-10">
+      <section className="container mx-auto">
         <h2 className="mt-12 mb-4 text-5xl text-center tracking-tight font-extrabold  text-dark dark:text-white sm:leading-none">
           Something that he has
           <span className="text-indigo-600 dark:text-indigo-500"> build</span>
@@ -42,7 +42,7 @@ const Projects = () => {
           animate={{ opacity: 1 }}
           initial={{ opacity: 0 }}
           exit={{ opacity: 0 }}
-          className="grid grid-cols-1 gap-4 md:gap-4 md:grid-cols-2 lg:grid-cols-4"
+          className="grid grid-cols-1 gap-4 md:gap-4 md:grid-cols-2 lg:grid-cols-4 place-content-center"
         >
           <AnimatePresence>
             {filtered.map((project, index) => (
@@ -51,7 +51,6 @@ const Projects = () => {
           </AnimatePresence>
         </motion.div>
       </section>
-
     </>
   );
 };
