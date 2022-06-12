@@ -1,79 +1,119 @@
-import React from "react";
+import { motion, useAnimation } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
 import Lottie from "react-lottie";
+import {
+  HowIWorkAllProcess,
+  HowIWorkHeading,
+  HowIWorkSubHeading,
+} from "../../../Animations/Animations";
 import "./WorkProcess.css";
 
 const WorkProcess = () => {
+  const { ref, inView } = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
+
+  const [viewDiv, setViewDiv] = useState(false);
+
+  const animation = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      setViewDiv(true);
+    }
+    if (!inView) {
+      setViewDiv(false);
+    }
+  }, [inView, animation]);
+
   return (
-    <section className="container mx-auto py-20">
+    <section ref={ref} className="container mx-auto py-20">
       <div className="text-center mb-28">
-        <h3 className="my-6 text-5xl text-center tracking-tight font-extrabold  text-dark dark:text-white sm:leading-none">
+        <motion.h3
+          initial="hidden"
+          animate={viewDiv && "visible"}
+          variants={HowIWorkHeading}
+          className="my-6 text-5xl text-center tracking-tight font-extrabold text-dark dark:text-white sm:leading-none"
+        >
           How I
           <span className="text-indigo-600 dark:text-indigo-500"> Work</span>
-        </h3>
-        <h2 className="text-3xl font-extrabold dark:text-white">
+        </motion.h3>
+        <motion.h2
+          initial="hidden"
+          animate={viewDiv && "visible"}
+          variants={HowIWorkSubHeading}
+          className="text-3xl font-extrabold dark:text-white"
+        >
           I prepare your projects in 3 stages
-        </h2>
+        </motion.h2>
       </div>
-      <div className="flex flex-col md:flex-row lg:flex-row justify-between items-center md:items-stretch lg:items-stretch">
-        <div class="how-i-work-item">
+      <motion.div
+        initial="hidden"
+        animate={viewDiv && "visible"}
+        variants={HowIWorkAllProcess}
+        className="flex flex-col md:flex-row lg:flex-row justify-between items-center md:items-stretch lg:items-stretch"
+      >
+        <div className="how-i-work-item">
           <img
             src="https://aipthemes.com/filaous/img/bg/arrow-img.png"
             alt="Arrrow image"
-            class="arrow-dashed-img"
+            className="arrow-dashed-img"
           />
-          <div class="number">
+          <div className="number">
             <span>01</span>
           </div>
-          <div class="number-border"></div>
-          <div class="img">
+          <div className="number-border"></div>
+          <div className="img">
             <img
               src="https://aipthemes.com/filaous/img/bg/how-i-work-img-1.png"
-              class="img-fluid"
+              className="img-fluid"
               alt="How i work"
             />
           </div>
-          <div class="text">
+          <div className="text">
             <h5 className="font-extrabold">Thinking</h5>
           </div>
         </div>
-        <div class="how-i-work-item">
+        <div className="how-i-work-item">
           <img
             src="https://aipthemes.com/filaous/img/bg/arrow-img.png"
             alt="Arrrow image"
-            class="arrow-dashed-img"
+            className="arrow-dashed-img"
           />
-          <div class="number">
+          <div className="number">
             <span>02</span>
           </div>
-          <div class="number-border"></div>
-          <div class="img">
+          <div className="number-border"></div>
+          <div className="img">
             <img
               src="https://aipthemes.com/filaous/img/bg/how-i-work-img-2.png"
-              class="img-fluid"
+              className="img-fluid"
               alt="How i work"
             />
           </div>
-          <div class="text">
+          <div className="text">
             <h5 className="font-extrabold">Research</h5>
           </div>
         </div>
-        <div class="how-i-work-item">
-          <div class="number">
+        <div className="how-i-work-item">
+          <div className="number">
             <span>03</span>
           </div>
-          <div class="number-border"></div>
-          <div class="img">
+          <div className="number-border"></div>
+          <div className="img">
             <img
               src="https://aipthemes.com/filaous/img/bg/how-i-work-img-3.png"
-              class="img-fluid"
+              className="img-fluid"
               alt="How i work"
             />
           </div>
-          <div class="text">
+          <div className="text">
             <h5 className="font-extrabold">Design</h5>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

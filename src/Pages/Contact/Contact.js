@@ -1,8 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import Lottie from "react-lottie";
 import ContactMe from "./../../Assets/SvgAnimations/contact.json";
 import emailjs from "@emailjs/browser";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import {
+  ContactHeadingAnimation,
+  ContactLeftAnimation,
+  ContactRightAnimation,
+  ContactTextAnimation,
+} from "../../Animations/Animations";
 
 const Contact = () => {
   const [values, setValues] = useState({
@@ -12,7 +20,6 @@ const Contact = () => {
     role: "",
     message: "",
   });
-  console.log(values);
 
   const handleChange = (e) => {
     setValues((values) => ({
@@ -49,25 +56,63 @@ const Contact = () => {
     },
   };
 
+  const { ref, inView } = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
+
+  const [viewDiv, setViewDiv] = useState(false);
+
+  const animation = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      setViewDiv(true);
+    }
+    if (!inView) {
+      setViewDiv(false);
+    }
+  }, [inView, animation]);
+
   return (
     <>
       <Helmet>
         <title>Akram Sakib - Contact</title>
       </Helmet>
-      <section className="contact_section py-12">
+      <section className="contact_section py-12" ref={ref}>
         <div className="text-center mb-4">
-          <p className="text-sm leading-7 dark:text-white text-gray-500 font-regular uppercase">
+          <motion.p
+            initial="hidden"
+            animate={viewDiv && "visible"}
+            variants={ContactTextAnimation}
+            className="text-sm leading-7 dark:text-white text-gray-500 font-regular uppercase"
+          >
             Contact
-          </p>
-          <h3 className="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight text-gray-900 dark:text-white">
+          </motion.p>
+          <motion.h3
+            initial="hidden"
+            animate={viewDiv && "visible"}
+            variants={ContactHeadingAnimation}
+            className="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight text-gray-900 dark:text-white"
+          >
             Get In <span className="text-indigo-600">Touch</span>
-          </h3>
+          </motion.h3>
         </div>
         <div className="container mx-auto flex px-5 pb-24 md:flex-row flex-col items-center">
-          <div className="lottie">
+          <motion.div
+            className="lottie"
+            initial="hidden"
+            animate={viewDiv && "visible"}
+            variants={ContactLeftAnimation}
+          >
             <Lottie options={defaultOptions} height={"100%"} width={"100%"} />
-          </div>
-          <div className="max-w-screen-md mx-auto p-5">
+          </motion.div>
+          <motion.div
+            className="max-w-screen-md mx-auto p-5"
+            initial="hidden"
+            animate={viewDiv && "visible"}
+            variants={ContactRightAnimation}
+          >
             <form className="w-full" onSubmit={handleSubmit}>
               <div className="flex flex-wrap -mx-3 mb-6">
                 <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
@@ -159,7 +204,7 @@ const Contact = () => {
                 </div>
               </div>
             </form>
-          </div>
+          </motion.div>
         </div>
       </section>
     </>

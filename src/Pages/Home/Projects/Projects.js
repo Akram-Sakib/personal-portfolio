@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Filter from "./Filter/Filter";
 import Project from "./Project/Project";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { AllProjectsAnimation, ProjectHeadingText, ProjectSubHeadingText } from "../../../Animations/Animations";
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -19,16 +21,44 @@ const Projects = () => {
     setFiltered(data.result);
   };
 
+     const { ref, inView } = useInView({
+       threshold: 0.2,
+       triggerOnce: true,
+     });
+
+     const [viewDiv, setViewDiv] = useState(false);
+
+     const animation = useAnimation();
+
+     useEffect(() => {
+       if (inView) {
+         setViewDiv(true);
+       }
+       if (!inView) {
+         setViewDiv(false);
+       }
+     }, [inView, animation]);
+
   return (
     <>
-      <section className="container mx-auto">
-        <h2 className="mt-12 mb-4 text-5xl text-center tracking-tight font-extrabold  text-dark dark:text-white sm:leading-none">
+      <section className="container mx-auto" ref={ref}>
+        <motion.h2
+          initial="hidden"
+          animate={viewDiv && "visible"}
+          variants={ProjectHeadingText}
+          className="mt-12 mb-4 text-5xl text-center tracking-tight font-extrabold  text-dark dark:text-white sm:leading-none"
+        >
           Something that he has
           <span className="text-indigo-600 dark:text-indigo-500"> build</span>
-        </h2>
-        <p className="text-xl text-center dark:text-gray-400">
+        </motion.h2>
+        <motion.p
+          initial="hidden"
+          animate={viewDiv && "visible"}
+          variants={ProjectSubHeadingText}
+          className="text-xl text-center dark:text-gray-400"
+        >
           with love, expertise and pinch of magical ingredients
-        </p>
+        </motion.p>
         <div className="text-center">
           <Filter
             projects={projects}
@@ -39,10 +69,11 @@ const Projects = () => {
         </div>
         <motion.div
           layout
-          animate={{ opacity: 1 }}
-          initial={{ opacity: 0 }}
+          initial="hidden"
+          animate={viewDiv && "visible"}
+          variants={AllProjectsAnimation}
           exit={{ opacity: 0 }}
-          className="grid grid-cols-1 gap-4 md:gap-4 md:grid-cols-2 lg:grid-cols-4 place-content-center"
+          className="grid grid-cols-1 gap-4 md:gap-4 md:grid-cols-2 lg:grid-cols-3 place-content-center"
         >
           <AnimatePresence>
             {filtered.map((project, index) => (

@@ -4,33 +4,37 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import Axios from "axios";
 import Rating from "react-rating";
+import { motion, useAnimation } from "framer-motion";
+import {
+  TestimonialAnimation,
+  TestimonialTextAnimation,
+} from "../../../Animations/Animations";
+import { useInView } from "react-intersection-observer";
 
 const Testimonial = () => {
+  const [testimonial, setTestimonial] = useState([]);
 
-  const [testimonial,setTestimonial] = useState([])
-
-  useEffect(()=>{
+  useEffect(() => {
     Axios.get("https://testimonialapi.toolcarton.com/api")
-      .then( (data) => {
+      .then((data) => {
         // handle success
         setTestimonial(data.data);
       })
-      .catch( (error) => {
+      .catch((error) => {
         // handle error
         console.log(error);
       })
-      .then( ()=> {
+      .then(() => {
         // always executed
       });
-  },[])
-
+  }, []);
 
   const settings_1 = {
     dots: false,
     infinite: true,
     speed: 500,
     slidesToScroll: 1,
-    slidesToShow:2,
+    slidesToShow: 2,
     autoplay: true,
     pauseOnHover: false,
 
@@ -38,7 +42,7 @@ const Testimonial = () => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow:1,
+          slidesToShow: 1,
           slidesToScroll: 1,
         },
       },
@@ -59,14 +63,42 @@ const Testimonial = () => {
     ],
   };
 
+   const { ref, inView } = useInView({
+     threshold: 0.2,
+     triggerOnce: true,
+   });
+
+   const [viewDiv, setViewDiv] = useState(false);
+
+   const animation = useAnimation();
+
+   useEffect(() => {
+     if (inView) {
+       setViewDiv(true);
+     }
+     if (!inView) {
+       setViewDiv(false);
+     }
+   }, [inView, animation]);
+
   return (
-    <section className="container mx-auto pb-20">
-      <h2 className="my-12 text-5xl text-center tracking-tight font-extrabold  text-dark dark:text-white sm:leading-none">
+    <section className="container mx-auto pb-20" ref={ref}>
+      <motion.h2
+        initial="hidden"
+        animate={viewDiv && "visible"}
+        variants={TestimonialTextAnimation}
+        className="my-12 text-5xl text-center tracking-tight font-extrabold  text-dark dark:text-white sm:leading-none"
+      >
         Client
         <span className="text-indigo-600 dark:text-indigo-500"> Review</span>
-      </h2>
+      </motion.h2>
 
-      <div className="px-6 ">
+      <motion.div
+        className="px-6 "
+        initial={"hidden"}
+        animate={viewDiv && "visible"}
+        variants={TestimonialAnimation}
+      >
         <Slider {...settings_1}>
           {testimonial.map((review) => (
             <div key={review.id}>
@@ -98,7 +130,7 @@ const Testimonial = () => {
             </div>
           ))}
         </Slider>
-      </div>
+      </motion.div>
     </section>
   );
 };

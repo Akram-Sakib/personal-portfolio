@@ -78,32 +78,24 @@ const Navbar = () => {
                   </NavLink>
                 </div>
                 <NavLink activeclassname="active" to="/portfolio">
-                  <span
-                    className="text-base dark:hover:text-white font-medium text-gray-500 hover:text-gray-900"
-                  >
+                  <span className="text-base dark:hover:text-white font-medium text-gray-500 hover:text-gray-900">
                     Portfolio
                   </span>
                 </NavLink>
                 <div className="relative">
                   <NavLink activeclassname="active" to="/blog">
-                    <span
-                      className="group dark:hover:text-white rounded-md text-gray-500 inline-flex items-center text-base font-medium hover:text-gray-900"
-                    >
+                    <span className="group dark:hover:text-white rounded-md text-gray-500 inline-flex items-center text-base font-medium hover:text-gray-900">
                       Blog
                     </span>
                   </NavLink>
                 </div>
                 <NavLink activeclassname="active" to="/about">
-                  <span
-                    className="text-base dark:hover:text-white font-medium text-gray-500 hover:text-gray-900"
-                  >
+                  <span className="text-base dark:hover:text-white font-medium text-gray-500 hover:text-gray-900">
                     About
                   </span>
                 </NavLink>
                 <NavLink activeclassname="active" to="/contact">
-                  <span
-                    className="text-base dark:hover:text-white font-medium text-gray-500 hover:text-gray-900"
-                  >
+                  <span className="text-base dark:hover:text-white font-medium text-gray-500 hover:text-gray-900">
                     Contact
                   </span>
                 </NavLink>
@@ -111,7 +103,8 @@ const Navbar = () => {
               <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
                 <ThemeToggle />
                 <a
-                  href="/hello"
+                  href="https://drive.google.com/file/d/13InTZi1mAYqxdHQrN-NfIP-fr_BgEcip/view?usp=sharing"
+                  target="_blank"
                   className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
                 >
                   Resume

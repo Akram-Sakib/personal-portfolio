@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Banner.css";
 import Lottie from "react-lottie";
 import developer from "./../../../Assets/SvgAnimations/developer.json";
-import {motion} from "framer-motion";
+import {motion, useAnimation} from "framer-motion";
 import { bannerLeftVariant, bannerRightVariant } from "../../../Animations/Animations";
+import { useInView } from "react-intersection-observer";
 
 const Banner = () => {
 
@@ -16,12 +17,31 @@ const Banner = () => {
     },
   };
 
+   const { ref, inView } = useInView({
+     threshold: 0.2,
+     triggerOnce: true,
+   });
+
+   const [viewDiv, setViewDiv] = useState(false);
+
+   const animation = useAnimation();
+
+   useEffect(() => {
+     if (inView) {
+       setViewDiv(true);
+     }
+     if (!inView) {
+       setViewDiv(false);
+     }
+   }, [inView, animation]);
+
+
   return (
-    <section className="container mx-auto relative">
+    <section ref={ref} className="container mx-auto relative">
       <div className="flex flex-col lg:flex-row pt-8 md:pt-16 lg:pt-20 px-6 lg:justify-between">
         <motion.div
           initial="hidden"
-          animate="visible"
+          animate={viewDiv && "visible"}
           variants={bannerLeftVariant}
         >
           <h2 className="text-4xl text-left tracking-tight font-extrabold  text-dark dark:text-white sm:leading-none">
@@ -83,7 +103,7 @@ const Banner = () => {
         </motion.div>
         <motion.div
           initial="hidden"
-          animate="visible"
+          animate={viewDiv && "visible"}
           variants={bannerRightVariant}
           className="lg:w-1/3 md:w-3/4 md:mx-auto"
         >

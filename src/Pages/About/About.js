@@ -142,7 +142,7 @@ const About = () => {
             </div>
             <div className="progress_bar">
               <div className="my-4">
-                <div class="mb-1 text-base font-medium">React</div>
+                <div className="mb-1 text-base font-medium">React</div>
                 <div className="w-full h-4 bg-transparent rounded-full">
                   <div
                     className="h-4 bg-indigo-600 rounded-full"
@@ -151,7 +151,7 @@ const About = () => {
                 </div>
               </div>
               <div className="my-8">
-                <div class="mb-1 text-base font-medium">Javascript</div>
+                <div className="mb-1 text-base font-medium">Javascript</div>
                 <div className="w-full h-4 bg-transparent rounded-full">
                   <div
                     className="h-4 bg-indigo-600 rounded-full"
@@ -160,7 +160,7 @@ const About = () => {
                 </div>
               </div>
               <div className="my-8">
-                <div class="mb-1 text-base font-medium">Backend</div>
+                <div className="mb-1 text-base font-medium">Backend</div>
                 <div className="w-full h-4 bg-transparent rounded-full">
                   <div
                     className="h-4 bg-indigo-600 rounded-full"
