@@ -4,32 +4,50 @@ import "./Project.css";
 
 const Project = ({ project }) => {
   return (
-    <div className="project_parent">
+    <motion.div
+      layout
+      className="project_parent"
+      animate={{
+        opacity: 1,
+        scale: 1,
+      }}
+      initial={{ opacity: 0, scale: 0 }}
+      exit={{ opacity: 0, scale: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="project_cardtitle">
-        <h1 className="project_projecttitle">{project?.name}</h1>
+        <h1 className="project_projecttitle dark:text-white">
+          {project?.name}
+        </h1>
         <div className="chakra_stack">
-          {project?.tags.map((tag) => (
-            <div>
+          {project?.tags.map((tag, index) => (
+            <div key={index}>
               <span className="stack">
-                <span className="inside_stack first-letter:uppercase">{tag}</span>
+                <span className="inside_stack first-letter:uppercase">
+                  {tag}
+                </span>
               </span>
             </div>
           ))}
         </div>
       </div>
       <div className="project_imageandsocial">
-        <div className="project_cardbox">
+        <div className="project_cardbox dark:border-white">
           <img src={project?.featureimg} alt="" />
         </div>
         <div>
-          <div className="project_socialicon">
-            <a target="_blank" href={project?.projectlink}>
+          <div className="project_socialicon dark:border-white">
+            <a
+              target="_blank"
+              className="dark:text-white"
+              href={project?.projectlink}
+            >
               <svg
                 aria-hidden="true"
                 focusable="false"
                 data-prefix="fab"
                 data-icon="github-alt"
-                class="svg-inline--fa fa-github-alt fa-w-15 "
+                className="svg-inline--fa fa-github-alt fa-w-15 "
                 role="img"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 480 512"
@@ -41,14 +59,18 @@ const Project = ({ project }) => {
               </svg>
             </a>
           </div>
-          <div className="project_socialicon">
-            <a target="_blank" href={project?.frontendlink}>
+          <div className="project_socialicon dark:border-white">
+            <a
+              target="_blank"
+              className="dark:text-white"
+              href={project?.frontendlink}
+            >
               <svg
                 aria-hidden="true"
                 focusable="false"
                 data-prefix="fab"
                 data-icon="telegram-plane"
-                class="svg-inline--fa fa-telegram-plane fa-w-14 "
+                className="svg-inline--fa fa-telegram-plane fa-w-14 "
                 role="img"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 448 512"
@@ -63,9 +85,9 @@ const Project = ({ project }) => {
         </div>
       </div>
       <div className="project_cardbottom">
-        <p>{project?.description}</p>
+        <p className="dark:text-gray-400">{project?.description}</p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

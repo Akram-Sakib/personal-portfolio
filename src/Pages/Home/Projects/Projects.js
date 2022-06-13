@@ -69,15 +69,15 @@ const Projects = () => {
         </div>
         <motion.div
           layout
-          initial="hidden"
-          animate={viewDiv && "visible"}
-          variants={AllProjectsAnimation}
-          exit={{ opacity: 0 }}
-          className="grid grid-cols-1 gap-4 md:gap-4 md:grid-cols-2 lg:grid-cols-3 place-content-center"
+          // initial="hidden"
+          // animate={viewDiv && "visible"}
+          // variants={AllProjectsAnimation}
+
+          className="grid grid-cols-1 gap-4 md:gap-4 md:grid-cols-1 lg:grid-cols-2 place-items-center"
         >
           <AnimatePresence>
-            {filtered.map((project, index) => (
-              <Project key={index} project={project} />
+            {filtered.map((project) => (
+              <Project key={project._id} project={project} />
             ))}
           </AnimatePresence>
         </motion.div>

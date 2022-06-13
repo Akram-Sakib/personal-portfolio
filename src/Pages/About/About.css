@@ -14,7 +14,7 @@
   position:relative;
   margin:2rem auto;
   padding:40px 0;
-  width: 60vw;
+  width: 80vw;
   box-sizing:border-box;
 }
 .timeline:before{
@@ -48,6 +48,7 @@
 }
 .content{
   padding-bottom:20px;
+  font-size: 38px;
 }
 .timeline ul li:nth-child(odd):before
 {
