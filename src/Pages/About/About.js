@@ -19,16 +19,15 @@ const About = () => {
               </span>
             </h1>
             <p className="mb-8 leading-relaxed">
-              Hey there! I'm a <del>dragon lost in human world</del> Computer
-              Science master's student at Boston University. Before that, I got
-              my bachelor's degree in Software Engineering at Tongji University.
-              I'm trying to find a balance between research and engineering. My
-              research interests lie primarily in exploring the capability of
-              machines to be continual and efficient, like meta-learning,
-              few-shot learning and continual learning. I'm also working on
-              multi-modal retrieval for my internship. I'm also learning to
-              build machine learning softwares and systems. I'm also learning
-              TypeScript, React and Vue.
+              🍇 ⋆ 🍒 🎀 𝐻𝑒𝓎 𝓉𝒽𝑒𝓇𝑒❣ 𝐼'𝓂 𝒶{" "}
+              <del>𝒹𝓇𝒶𝑔💙𝓃 𝓁🍑𝓈𝓉 𝒾𝓃 𝒽𝓊𝓂𝒶𝓃 𝓌❤𝓇𝓁𝒹</del> 𝒞🍬𝓂𝓅𝓊𝓉𝑒𝓇 𝒮𝒸𝒾𝑒𝓃𝒸𝑒 𝒟𝒾𝓅𝓁❀𝓂𝒶
+              𝐸𝓃𝑔𝒾𝓃𝑒𝑒𝓇'𝓈 𝓈𝓉𝓊𝒹𝑒𝓃𝓉 𝒶𝓉 𝒟𝒽𝒶𝓀𝒶 𝒫💮𝓁𝓎𝓉𝑒𝒸𝒽𝓃𝒾𝒸 𝐼𝓃𝓈𝓉𝒾𝓉𝓊𝓉𝑒. 🎀 🍒 ⋆ 🍇. 🍰
+              🎀 𝒜𝓈 𝒶 𝓊𝓈𝑒𝓇 𝒾𝓃𝓉𝑒𝓇𝒻𝒶𝒸𝑒 𝒹𝑒𝓈𝒾𝑔𝓃𝑒𝓇 𝒻🍬𝓇 𝒸☯𝓂𝓅𝓁𝑒𝓍 𝒾𝓈𝓈𝓊𝑒𝓈, 𝐼 𝑒𝓃�🌺𝓎
+              �𝓉𝓇𝒶𝓃𝓈𝒻☯𝓇𝓂𝒾𝓃𝑔 𝓉𝒽𝑒𝓂 𝒾𝓃𝓉🌞 𝓈𝒾𝓂𝓅𝓁𝑒, 𝓈𝓉𝓎𝓁𝒾𝓈𝒽 𝒾𝓃𝓉𝑒𝓇𝒻𝒶𝒸𝑒𝓈. 𝐿❀𝑔𝒾𝒸 �𝓃𝒹
+              𝓈𝓉𝓇𝓊𝒸𝓉𝓊𝓇𝑒 𝓂𝒶𝓉𝓉𝑒𝓇 𝓉🍩 𝓂𝑒, 𝓈💞 𝐼 𝒶𝓂 𝒶𝓁𝓌𝒶𝓎𝓈 𝓈𝓉𝓇𝒾𝓋𝒾𝓃𝑔 𝓉💮 𝓌𝓇𝒾𝓉𝑒
+              𝑒𝓁𝑒𝑔𝒶𝓃𝓉, 𝑒𝒻𝒻𝒾𝒸𝒾𝑒𝓃𝓉, 𝒶𝓃𝒹 𝓌𝑒𝓁𝓁-𝓈𝓉𝓇𝓊𝒸𝓉𝓊𝓇𝑒𝒹 𝒸🌸𝒹𝑒, 𝓇𝑒𝑔𝒶𝓇𝒹𝓁𝑒𝓈𝓈 ❁𝒻
+              𝓌𝒽𝑒𝓉𝒽𝑒𝓇 𝒾𝓉 𝒾𝓈 𝐻𝒯𝑀𝐿, 𝒞𝒮𝒮, ❀𝓇 𝒥𝒮. 𝐼'𝓂 𝒻𝓇𝑒𝑒 𝓉🍪 𝒹𝑒𝓋𝑒𝓁♡𝓅 𝒻𝓊𝓁𝓁-𝓈𝓉𝒶𝒸𝓀
+              𝓌𝑒𝒷𝓈𝒾𝓉𝑒𝓈 𝒶𝓈 𝓌𝑒𝓁𝓁. 🎀 🍰
             </p>
             <div className="flex justify-center">
               <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
@@ -135,8 +134,8 @@ const About = () => {
             </div>
             <div className="my-8 w-4/6">
               <p>
-                For more than 20 years our experts have been accomplishing
-                enough with modern Web Development, new generation web and app
+                For more than 2 years our experts have been accomplishing enough
+                with modern Web Development, new generation web and app
                 programming language.
               </p>
             </div>

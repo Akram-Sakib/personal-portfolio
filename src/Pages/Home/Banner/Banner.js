@@ -65,7 +65,7 @@ const Banner = () => {
                 target="_blank"
                 href="https://www.facebook.com/akramSakibA"
               >
-                <i className="fa fa-facebook-f"></i>
+                <i className="fa-brands fa-facebook-f"></i>
               </a>
               <a
                 rel="noreferrer"
@@ -73,7 +73,7 @@ const Banner = () => {
                 target="_blank"
                 href="https://www.instagram.com/myself_saki_"
               >
-                <i className="fa fa-instagram"></i>
+                <i className="fa-brands fa-instagram"></i>
               </a>
               <a
                 rel="noreferrer"
@@ -81,7 +81,7 @@ const Banner = () => {
                 target="_blank"
                 href="https://twitter.com/AkramSakib4"
               >
-                <i className="fa fa-twitter"></i>
+                <i className="fa-brands fa-twitter"></i>
               </a>
               <a
                 rel="noreferrer"
@@ -89,7 +89,7 @@ const Banner = () => {
                 target="_blank"
                 href="https://github.com/Akram-Sakib"
               >
-                <i className="fa fa-github"></i>
+                <i class="fa-brands fa-github"></i>
               </a>
               <a
                 rel="noreferrer"
@@ -97,7 +97,7 @@ const Banner = () => {
                 target="_blank"
                 href="https://www.linkedin.com/in/akram-sakib-a7742a214/"
               >
-                <i className="fa fa-linkedin"></i>
+                <i className="fa-brands fa-linkedin"></i>
               </a>
             </div>
             <button className="rounded w-24 bg-indigo-700 hover:bg-indigo-800 py-2 px-4 text-white">

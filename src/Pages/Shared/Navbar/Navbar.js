@@ -103,6 +103,7 @@ const Navbar = () => {
               <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
                 <ThemeToggle />
                 <a
+                  rel="noreferrer"
                   href="https://drive.google.com/file/d/13InTZi1mAYqxdHQrN-NfIP-fr_BgEcip/view?usp=sharing"
                   target="_blank"
                   className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"

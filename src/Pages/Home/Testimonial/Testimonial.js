@@ -3,13 +3,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import Axios from "axios";
-import Rating from "react-rating";
 import { motion, useAnimation } from "framer-motion";
 import {
   TestimonialAnimation,
   TestimonialTextAnimation,
 } from "../../../Animations/Animations";
 import { useInView } from "react-intersection-observer";
+import ReactStars from "react-rating-stars-component";
 
 const Testimonial = () => {
   const [testimonial, setTestimonial] = useState([]);
@@ -18,6 +18,7 @@ const Testimonial = () => {
     Axios.get("https://testimonialapi.toolcarton.com/api")
       .then((data) => {
         // handle success
+        console.log(data.data);
         setTestimonial(data.data);
       })
       .catch((error) => {
@@ -117,12 +118,13 @@ const Testimonial = () => {
                     {"."}
                   </p>
                   <div>
-                    <Rating
-                      emptySymbol="fa fa-star-o fa-2x text-indigo-800 dark:text-indigo-500"
-                      fullSymbol="fa fa-star fa-2x text-indigo-800 dark:text-indigo-500"
-                      fractions={10}
-                      initialRating={review.rating}
-                      readonly
+                    <ReactStars
+                      readonly={true}
+                      count={5}
+                      size={24}
+                      isHalf={true}
+                      activeColor="#4338ca"
+                      value={review.rating}
                     />
                   </div>
                 </div>

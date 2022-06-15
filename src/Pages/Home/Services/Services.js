@@ -6,6 +6,7 @@ import { motion, useAnimation } from "framer-motion";
 import Lottie from "react-lottie";
 import { useInView } from "react-intersection-observer";
 import { serviceTextAnimation } from "../../../Animations/Animations";
+import {Link} from "react-router-dom";
 
 const servicesData = [
   {
@@ -29,7 +30,7 @@ const servicesData = [
       visible: {
         x: 0,
         opacity: 1,
-        transition: { duration: 1, delay: .5, type: "spring" },
+        transition: { duration: 1, type: "spring" },
       },
     },
   },
@@ -54,7 +55,7 @@ const servicesData = [
       visible: {
         x: 0,
         opacity: 1,
-        transition: { duration: 1, delay: 1.5, type: "spring" },
+        transition: { duration: 1, delay: .5, type: "spring" },
       },
     },
   },
@@ -79,7 +80,7 @@ const servicesData = [
       visible: {
         x: 0,
         opacity: 1,
-        transition: { duration: 1, delay: 2.5, type: "spring" },
+        transition: { duration: 1, delay: 1, type: "spring" },
       },
     },
   },
@@ -140,8 +141,8 @@ const Services = () => {
               <p className="mb-3 lg:text-base	 font-normal md:text-xs text-gray-700 dark:text-gray-400">
                 {service?.description}
               </p>
-              <a
-                href="#"
+              <Link
+                to="/contact"
                 className="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
                 Hire me
@@ -157,7 +158,7 @@ const Services = () => {
                     clipRule="evenodd"
                   ></path>
                 </svg>
-              </a>
+              </Link>
             </div>
           </motion.div>
         ))}

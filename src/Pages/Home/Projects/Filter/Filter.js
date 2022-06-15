@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 
 const Filter = ({ projects, setFiltered, active, setActive }) => {
+  
   useEffect(() => {
     if (active === "all") {
       setFiltered(projects);
@@ -10,7 +11,7 @@ const Filter = ({ projects, setFiltered, active, setActive }) => {
       project.category.includes(active)
     );
     setFiltered(filtered);
-  }, [active]);
+  }, [active, projects, setFiltered]);
 
   return (
     <div className="flex justify-center py-12 flex-wrap">

@@ -38,6 +38,7 @@ const Project = ({ project }) => {
         <div>
           <div className="project_socialicon dark:border-white">
             <a
+              rel="noreferrer"
               target="_blank"
               className="dark:text-white"
               href={project?.projectlink}
@@ -61,6 +62,7 @@ const Project = ({ project }) => {
           </div>
           <div className="project_socialicon dark:border-white">
             <a
+              rel="noreferrer"
               target="_blank"
               className="dark:text-white"
               href={project?.frontendlink}

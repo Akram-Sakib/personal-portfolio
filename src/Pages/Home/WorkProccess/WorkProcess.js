@@ -7,6 +7,10 @@ import {
   HowIWorkSubHeading,
 } from "../../../Animations/Animations";
 import "./WorkProcess.css";
+import ArrowImage from "./../../../Assets/Images/arrow-img.png";
+import howIWorkImg1 from "./../../../Assets/Images/how-i-work-img-1.png"
+import howIWorkImg2 from "./../../../Assets/Images/how-i-work-img-2.png"
+import howIWorkImg3 from "./../../../Assets/Images/how-i-work-img-3.png"
 
 const WorkProcess = () => {
   const { ref, inView } = useInView({
@@ -56,8 +60,8 @@ const WorkProcess = () => {
       >
         <div className="how-i-work-item">
           <img
-            src="https://aipthemes.com/filaous/img/bg/arrow-img.png"
-            alt="Arrrow image"
+            src={ArrowImage}
+            alt="Arrrow Pic"
             className="arrow-dashed-img hidden md:inline-block"
           />
           <div className="number">
@@ -65,11 +69,7 @@ const WorkProcess = () => {
           </div>
           <div className="number-border"></div>
           <div className="img">
-            <img
-              src="https://aipthemes.com/filaous/img/bg/how-i-work-img-1.png"
-              className="img-fluid"
-              alt="How i work"
-            />
+            <img src={howIWorkImg1} className="img-fluid" alt="How i work" />
           </div>
           <div className="text">
             <h5 className="font-extrabold">Thinking</h5>
@@ -77,8 +77,8 @@ const WorkProcess = () => {
         </div>
         <div className="how-i-work-item">
           <img
-            src="https://aipthemes.com/filaous/img/bg/arrow-img.png"
-            alt="Arrrow image"
+            src={ArrowImage}
+            alt="Arrrow pic"
             className="arrow-dashed-img hidden md:inline-block"
           />
           <div className="number">
@@ -86,11 +86,7 @@ const WorkProcess = () => {
           </div>
           <div className="number-border"></div>
           <div className="img">
-            <img
-              src="https://aipthemes.com/filaous/img/bg/how-i-work-img-2.png"
-              className="img-fluid"
-              alt="How i work"
-            />
+            <img src={howIWorkImg2} className="img-fluid" alt="How i work" />
           </div>
           <div className="text">
             <h5 className="font-extrabold">Research</h5>
@@ -102,11 +98,7 @@ const WorkProcess = () => {
           </div>
           <div className="number-border"></div>
           <div className="img">
-            <img
-              src="https://aipthemes.com/filaous/img/bg/how-i-work-img-3.png"
-              className="img-fluid"
-              alt="How i work"
-            />
+            <img src={howIWorkImg3} className="img-fluid" alt="How i work" />
           </div>
           <div className="text">
             <h5 className="font-extrabold">Design</h5>

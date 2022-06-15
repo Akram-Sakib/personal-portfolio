@@ -3,7 +3,7 @@ import Filter from "./Filter/Filter";
 import Project from "./Project/Project";
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { AllProjectsAnimation, ProjectHeadingText, ProjectSubHeadingText } from "../../../Animations/Animations";
+import { ProjectHeadingText, ProjectSubHeadingText } from "../../../Animations/Animations";
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
