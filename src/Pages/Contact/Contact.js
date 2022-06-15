@@ -11,13 +11,16 @@ import {
   ContactRightAnimation,
   ContactTextAnimation,
 } from "../../Animations/Animations";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
+
+
   const [values, setValues] = useState({
     firstName: "",
     lastName: "",
     email: "",
-    role: "",
     message: "",
   });
 
@@ -30,6 +33,36 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    for (const property in values) {
+      if (values[property] === "") {
+        toast.warn(
+          `${property.toLocaleLowerCase()} field must be not empty`,
+          {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          }
+        );
+        return
+      }
+    }
+    let regexEmail = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/; 
+    if (!regexEmail.test(values.email)) {
+      toast.warn(`Enter a valid email address`, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      return;
+    } 
     emailjs
       .send(
         "service_0qurx2z",
@@ -39,10 +72,26 @@ const Contact = () => {
       )
       .then(
         (res) => {
-          console.log("Success", res);
+          toast.success("Message sent successfully", {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
         },
         (err) => {
-          console.log("Error", err);
+          toast.error("Something Went Error", {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
         }
       );
   };
@@ -80,6 +129,17 @@ const Contact = () => {
         <title>Akram Sakib - Contact</title>
       </Helmet>
       <section className="contact_section py-12" ref={ref}>
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
         <div className="text-center mb-4">
           <motion.p
             initial="hidden"
@@ -118,26 +178,27 @@ const Contact = () => {
                 <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                   <label
                     className="block uppercase tracking-wide text-gray-700 dark:text-white text-xs font-bold mb-2"
-                    for="grid-first-name"
+                    htmlFor="grid-first-name"
                   >
                     First Name
                   </label>
                   <input
-                    className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    className="appearance-none block w-full bg-gray-200 text-gray-700 borderrounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                     id="grid-first-name"
                     type="text"
                     name="firstName"
                     placeholder="Jane"
                     onBlur={handleChange}
+                    required
                   />
-                  <p className="text-red-500 text-xs italic">
+                  {/* <p className="text-red-500 text-xs italic">
                     Please fill out this field.
-                  </p>
+                  </p> */}
                 </div>
                 <div className="w-full md:w-1/2 px-3">
                   <label
                     className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
-                    for="grid-last-name"
+                    htmlFor="grid-last-name"
                   >
                     Last Name
                   </label>
@@ -155,7 +216,7 @@ const Contact = () => {
                 <div className="w-full px-3">
                   <label
                     className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
-                    for="grid-password"
+                    htmlFor="grid-password"
                   >
                     Email Address
                   </label>
@@ -166,6 +227,7 @@ const Contact = () => {
                     name="email"
                     placeholder="********@*****.**"
                     onBlur={handleChange}
+                    required
                   />
                 </div>
               </div>
@@ -174,7 +236,7 @@ const Contact = () => {
                 <div className="w-full px-3">
                   <label
                     className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
-                    for="grid-password"
+                    htmlFor="grid-password"
                   >
                     Your Message
                   </label>
@@ -183,6 +245,7 @@ const Contact = () => {
                     className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                     name="message"
                     onBlur={handleChange}
+                    required={true}
                   ></textarea>
                 </div>
                 <div className="flex justify-between w-full px-3">

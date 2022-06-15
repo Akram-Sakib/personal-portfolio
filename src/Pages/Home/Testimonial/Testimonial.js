@@ -82,7 +82,7 @@ const Testimonial = () => {
    }, [inView, animation]);
 
   return (
-    <section className="container mx-auto pb-20" ref={ref}>
+    <section className="container px-6 mx-auto pb-20" ref={ref}>
       <motion.h2
         initial="hidden"
         animate={viewDiv && "visible"}

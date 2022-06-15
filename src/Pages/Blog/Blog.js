@@ -45,7 +45,7 @@ const Blog = () => {
       <Helmet>
         <title>Akram Sakib - Blogs</title>
       </Helmet>
-      <div className="flex items-center dark:bg-gray-900 justify-center lg:h-screen bg-gray-200">
+      <div className="flex px-6 items-center dark:bg-gray-900 justify-center lg:h-screen bg-gray-200">
         <div className="container">
           <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-5 md:p-20 mx-2">
             <div className="text-center">
@@ -84,7 +84,7 @@ const Blog = () => {
       </div>
 
       {/* Blog Start From Here */}
-      <section className="container mx-auto pb-20">
+      <section className="container px-6 mx-auto pb-20">
         <h2 className="my-12 text-5xl text-center tracking-tight font-extrabold  text-dark dark:text-white sm:leading-none">
           Recent
           <span className="text-indigo-600 dark:text-indigo-500"> Blogs</span>

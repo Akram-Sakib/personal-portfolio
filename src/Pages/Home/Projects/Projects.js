@@ -41,12 +41,12 @@ const Projects = () => {
 
   return (
     <>
-      <section className="container mx-auto" ref={ref}>
+      <section className="container px-6 mx-auto py-20" ref={ref}>
         <motion.h2
           initial="hidden"
           animate={viewDiv && "visible"}
           variants={ProjectHeadingText}
-          className="mt-12 mb-4 text-5xl text-center tracking-tight font-extrabold  text-dark dark:text-white sm:leading-none"
+          className="mb-4 text-5xl text-center tracking-tight font-extrabold  text-dark dark:text-white sm:leading-none"
         >
           Something that he has
           <span className="text-indigo-600 dark:text-indigo-500"> build</span>

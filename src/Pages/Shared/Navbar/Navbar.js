@@ -168,26 +168,11 @@ const Navbar = () => {
                 </div>
                 <div className="mt-6">
                   <nav className="grid gap-y-8">
-                    <a
-                      href="/hello"
+                    <NavLink
+                      activeclassname="active"
+                      to="/"
                       className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
                     >
-                      {/* Heroicon name: outline/chart-bar */}
-                      {/* <svg
-                        className="flex-shrink-0 h-6 w-6 text-indigo-600"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        aria-hidden="true"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                        />
-                      </svg> */}
                       <IconContext.Provider
                         value={{
                           className: "text-2xl text-indigo-600",
@@ -198,9 +183,10 @@ const Navbar = () => {
                       <span className="ml-3 text-base font-medium text-gray-900">
                         Home
                       </span>
-                    </a>
-                    <a
-                      href="/hello"
+                    </NavLink>
+                    <NavLink
+                      activeclassname="active"
+                      to="/portfolio"
                       className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
                     >
                       {/* Heroicon name: outline/cursor-click */}
@@ -214,9 +200,10 @@ const Navbar = () => {
                       <span className="ml-3 text-base font-medium text-gray-900">
                         Porfolio
                       </span>
-                    </a>
-                    <a
-                      href="/hello"
+                    </NavLink>
+                    <NavLink
+                      activeclassname="active"
+                      to="/blog"
                       className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
                     >
                       {/* Heroicon name: outline/shield-check */}
@@ -230,9 +217,10 @@ const Navbar = () => {
                       <span className="ml-3 text-base font-medium text-gray-900">
                         Blog
                       </span>
-                    </a>
-                    <a
-                      href="/hello"
+                    </NavLink>
+                    <NavLink
+                      activeclassname="active"
+                      to="/about"
                       className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
                     >
                       {/* Heroicon name: outline/view-grid */}
@@ -246,9 +234,10 @@ const Navbar = () => {
                       <span className="ml-3 text-base font-medium text-gray-900">
                         About
                       </span>
-                    </a>
-                    <a
-                      href="/hello"
+                    </NavLink>
+                    <NavLink
+                      activeclassname="active"
+                      to="/contact"
                       className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
                     >
                       {/* Heroicon name: outline/refresh */}
@@ -262,17 +251,19 @@ const Navbar = () => {
                       <span className="ml-3 text-base font-medium text-gray-900">
                         Contact
                       </span>
-                    </a>
+                    </NavLink>
                   </nav>
                 </div>
               </div>
               <div className="py-6 px-5 space-y-6">
                 <div>
                   <a
-                    href="/hello"
+                    rel="noreferrer"
+                    target={"_blank"}
+                    href="https://drive.google.com/file/d/13InTZi1mAYqxdHQrN-NfIP-fr_BgEcip/view?usp=sharing"
                     className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
                   >
-                    Sign In
+                    RESUME
                   </a>
                 </div>
               </div>

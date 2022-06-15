@@ -1,7 +1,6 @@
 import { motion, useAnimation } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
-import Lottie from "react-lottie";
 import {
   HowIWorkAllProcess,
   HowIWorkHeading,
@@ -29,7 +28,7 @@ const WorkProcess = () => {
   }, [inView, animation]);
 
   return (
-    <section ref={ref} className="container mx-auto py-20">
+    <section ref={ref} className="container px-6 mx-auto py-20">
       <div className="text-center mb-28">
         <motion.h3
           initial="hidden"
@@ -59,7 +58,7 @@ const WorkProcess = () => {
           <img
             src="https://aipthemes.com/filaous/img/bg/arrow-img.png"
             alt="Arrrow image"
-            className="arrow-dashed-img"
+            className="arrow-dashed-img hidden md:inline-block"
           />
           <div className="number">
             <span>01</span>
@@ -80,7 +79,7 @@ const WorkProcess = () => {
           <img
             src="https://aipthemes.com/filaous/img/bg/arrow-img.png"
             alt="Arrrow image"
-            className="arrow-dashed-img"
+            className="arrow-dashed-img hidden md:inline-block"
           />
           <div className="number">
             <span>02</span>

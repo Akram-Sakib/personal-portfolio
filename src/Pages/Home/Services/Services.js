@@ -106,7 +106,7 @@ const Services = () => {
  }, [inView, animation]);
 
   return (
-    <section className="container mx-auto pb-20">
+    <section className="container px-6 mx-auto pb-20">
       <motion.h2
         initial="hidden"
         animate={viewDiv && "visible"}

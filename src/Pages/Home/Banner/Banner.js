@@ -37,7 +37,7 @@ const Banner = () => {
 
 
   return (
-    <section ref={ref} className="container mx-auto relative">
+    <section ref={ref} className="container px-6 mx-auto relative">
       <div className="flex flex-col lg:flex-row pt-8 md:pt-16 lg:pt-20 px-6 lg:justify-between">
         <motion.div
           initial="hidden"
@@ -60,6 +60,7 @@ const Banner = () => {
           <div className="flex flex-col">
             <div className="social-links my-8 lg:my-4">
               <a
+                rel="noreferrer"
                 className="dark:text-white dark:bg-slate-700"
                 target="_blank"
                 href="https://www.facebook.com/akramSakibA"
@@ -67,6 +68,7 @@ const Banner = () => {
                 <i className="fa fa-facebook-f"></i>
               </a>
               <a
+                rel="noreferrer"
                 className="dark:text-white dark:bg-slate-700"
                 target="_blank"
                 href="https://www.instagram.com/myself_saki_"
@@ -74,6 +76,7 @@ const Banner = () => {
                 <i className="fa fa-instagram"></i>
               </a>
               <a
+                rel="noreferrer"
                 className="dark:text-white dark:bg-slate-700"
                 target="_blank"
                 href="https://twitter.com/AkramSakib4"
@@ -81,6 +84,7 @@ const Banner = () => {
                 <i className="fa fa-twitter"></i>
               </a>
               <a
+                rel="noreferrer"
                 className="dark:text-white dark:bg-slate-700"
                 target="_blank"
                 href="https://github.com/Akram-Sakib"
@@ -88,6 +92,7 @@ const Banner = () => {
                 <i className="fa fa-github"></i>
               </a>
               <a
+                rel="noreferrer"
                 className="dark:text-white dark:bg-slate-700"
                 target="_blank"
                 href="https://www.linkedin.com/in/akram-sakib-a7742a214/"
@@ -97,7 +102,13 @@ const Banner = () => {
             </div>
             <button className="rounded w-24 bg-indigo-700 hover:bg-indigo-800 py-2 px-4 text-white">
               {" "}
-              Resume
+              <a
+                rel="noreferrer"
+                target={"_blank"}
+                href="https://drive.google.com/file/d/13InTZi1mAYqxdHQrN-NfIP-fr_BgEcip/view?usp=sharing"
+              >
+                Resume
+              </a>
             </button>
           </div>
         </motion.div>
