@@ -120,8 +120,9 @@ const Testimonial = () => {
                   <div>
                     <ReactStars
                       readonly={true}
+                      edit={false}
                       count={5}
-                      size={24}
+                      size={40}
                       isHalf={true}
                       activeColor="#4338ca"
                       value={review.rating}
