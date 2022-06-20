@@ -15,7 +15,7 @@ const Projects = () => {
   }, []);
 
   const fetchProject = async () => {
-    const res = await fetch("http://localhost:5000/portfolio");
+    const res = await fetch("./projects.json");
     const data = await res.json();
     setProjects(data.result);
     setFiltered(data.result);
