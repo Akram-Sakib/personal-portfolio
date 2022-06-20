@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import "./Banner.css";
 import Lottie from "react-lottie";
 import developer from "./../../../Assets/SvgAnimations/developer.json";
-import {motion, useAnimation} from "framer-motion";
-import { bannerLeftVariant, bannerRightVariant } from "../../../Animations/Animations";
+import { motion, useAnimation } from "framer-motion";
+import {
+  bannerLeftVariant,
+  bannerRightVariant,
+} from "../../../Animations/Animations";
 import { useInView } from "react-intersection-observer";
 
 const Banner = () => {
-
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -17,24 +19,23 @@ const Banner = () => {
     },
   };
 
-   const { ref, inView } = useInView({
-     threshold: 0.2,
-     triggerOnce: true,
-   });
+  const { ref, inView } = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
 
-   const [viewDiv, setViewDiv] = useState(false);
+  const [viewDiv, setViewDiv] = useState(false);
 
-   const animation = useAnimation();
+  const animation = useAnimation();
 
-   useEffect(() => {
-     if (inView) {
-       setViewDiv(true);
-     }
-     if (!inView) {
-       setViewDiv(false);
-     }
-   }, [inView, animation]);
-
+  useEffect(() => {
+    if (inView) {
+      setViewDiv(true);
+    }
+    if (!inView) {
+      setViewDiv(false);
+    }
+  }, [inView, animation]);
 
   return (
     <section ref={ref} className="container px-6 mx-auto relative">
@@ -89,7 +90,7 @@ const Banner = () => {
                 target="_blank"
                 href="https://github.com/Akram-Sakib"
               >
-                <i class="fa-brands fa-github"></i>
+                <i className="fa-brands fa-github"></i>
               </a>
               <a
                 rel="noreferrer"

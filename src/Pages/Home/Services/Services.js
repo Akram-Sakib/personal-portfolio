@@ -118,7 +118,7 @@ const Services = () => {
         <span className="text-indigo-600 dark:text-indigo-500"> Services</span>
       </motion.h2>
       <div
-        className="flex flex-col md:flex-row lg:flex-row justify-between items-center md:items-stretch	 lg:items-stretch"
+        className="flex flex-col md:flex-row lg:flex-row justify-between items-center md:items-stretch lg:items-stretch gap-x-8"
         ref={ref}
       >
         {servicesData.map((service) => (

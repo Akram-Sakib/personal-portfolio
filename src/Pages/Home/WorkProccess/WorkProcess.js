@@ -56,7 +56,7 @@ const WorkProcess = () => {
         initial="hidden"
         animate={viewDiv && "visible"}
         variants={HowIWorkAllProcess}
-        className="flex flex-col md:flex-row lg:flex-row justify-between items-center md:items-stretch lg:items-stretch"
+        className="flex flex-col md:flex-row lg:flex-row justify-between items-center md:items-stretch lg:items-stretch gap-x-8"
       >
         <div className="how-i-work-item">
           <img
