@@ -106,7 +106,7 @@ const Banner = () => {
               <a
                 rel="noreferrer"
                 target={"_blank"}
-                href="https://drive.google.com/file/d/13InTZi1mAYqxdHQrN-NfIP-fr_BgEcip/view?usp=sharing"
+                href="https://drive.google.com/file/d/1ZBioCcrhS1JKp-6Azu61jH2RSeBtu_bB/view?usp=sharing"
               >
                 Resume
               </a>
