@@ -41,7 +41,7 @@ const Project = ({ project }) => {
               rel="noreferrer"
               target="_blank"
               className="dark:text-white"
-              href={project?.projectlink}
+              href={project?.frontendlink}
             >
               <svg
                 aria-hidden="true"
@@ -65,7 +65,7 @@ const Project = ({ project }) => {
               rel="noreferrer"
               target="_blank"
               className="dark:text-white"
-              href={project?.frontendlink}
+              href={project?.projectlink}
             >
               <svg
                 aria-hidden="true"
